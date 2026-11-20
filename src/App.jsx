@@ -79,7 +79,7 @@ export default function App() {
   function addMovie(movieData) {
     setMovies((current) => {
       const nextId = current.reduce((max, movie) => Math.max(max, movie.id), 0) + 1
-      return [...current, { ...movieData, id: nextId }]
+      return [{ ...movieData, id: nextId }, ...current]
     })
   }
 
